@@ -1,0 +1,172 @@
+.ranklist-container {
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+  background: linear-gradient(135deg, #0b2b4b 0%, #0b3d3f 50%, #0a7c75 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ranklist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  color: #eaf7ff;
+}
+
+.ranklist-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.home-link {
+  color: #eaf7ff;
+  text-decoration: none;
+  font-weight: 600;
+  background: rgba(255,255,255,0.1);
+  padding: 0.5rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.home-link:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.year-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.year-section {
+  background: transparent; /* collapsed: no panel */
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.year-section.open {
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(255,255,255,0.7);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.year-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: linear-gradient(180deg, #ffffff 0%, #f2fbfb 100%);
+  color: #0b3556;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.year-toggle.open {
+  background: linear-gradient(135deg, #0a7c75, #12b4a6);
+  color: #ffffff;
+}
+
+.year-label {
+  display: inline-block;
+}
+
+.rank-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0; /* no space when collapsed */
+  transition: max-height 0.4s ease, padding 0.2s ease;
+}
+
+.rank-cards.open {
+  max-height: 1200px; /* sufficient for typical content; adjust as needed */
+  padding: 1rem; /* add space only when open */
+}
+
+/* Explicit collapsed state if class is applied */
+.rank-cards.collapsed {
+  max-height: 0;
+  padding: 0;
+}
+
+.rank-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.8rem; /* a bit more space between badge and name */
+  align-items: start;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fffe 100%);
+  border: 1px solid #dbeaf0;
+  border-radius: 10px;
+  padding: 0.75rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.rank-badge {
+  height: 1.9rem;
+  line-height: 1.9rem; /* vertically center text */
+  padding: 0 0.6rem; /* a bit wider to fit long text */
+  min-width: 1.9rem;
+  border-radius: 999px; /* pill */
+  background: linear-gradient(135deg, #12b4a6, #0a7c75);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem; /* shrink slightly so words fit */
+  white-space: nowrap;
+}
+
+.rank-name {
+  margin: 0 0 0.25rem;
+  color: #07263f;
+  font-size: 0.95rem;
+}
+
+.rank-class {
+  margin: 0;
+  color: #475569;
+  font-size: 0.85rem;
+}
+
+.top-button-container {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.top-button {
+  background: linear-gradient(135deg, #12b4a6, #0a7c75);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(18,180,166,0.35);
+}
+
+.top-button:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .rank-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}

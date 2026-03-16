@@ -1,0 +1,137 @@
+/* Root section (optional wrapper) */
+.home-rank-section {
+	background-color: #ffffff;
+	padding: 0; /* rely on page/main padding for vertical rhythm */
+}
+
+/* Constrain inner content while keeping the header full-width look */
+.home-rank-container {
+	max-width: 100%;
+	margin: 1.5rem 0 0; /* align with homepage content */
+	padding: 0;
+	font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	background: transparent;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+/* Header */
+.home-rank-header {
+	background: transparent;
+	padding: 0;
+	text-align: left;
+}
+
+.home-rank-title {
+	margin: 0;
+	color: #0b2b4b;
+	font-weight: 800; /* bold */
+	font-size: 30px; /* ~28–32px */
+	letter-spacing: 1px;
+	border-bottom: 3px solid #0a7c75;
+	padding-bottom: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+/* Cards row */
+.home-rank-cards {
+	display: flex;
+	flex-wrap: nowrap; /* single row */
+	justify-content: flex-start;
+	gap: 1rem;
+	margin-top: 26px;
+	overflow-x: auto;
+	padding: 1rem;
+	scroll-behavior: smooth;
+	scrollbar-width: thin;
+	scrollbar-color: #0a7c75 transparent;
+	background: linear-gradient(to right, #f9fefe, #f3fbfb);
+	border-radius: 12px;
+}
+
+.home-rank-cards::-webkit-scrollbar {
+	height: 8px;
+}
+
+.home-rank-cards::-webkit-scrollbar-thumb {
+	background-color: #0a7c75;
+	border-radius: 4px;
+}
+
+/* Individual card */
+.home-rank-card {
+	width: 220px;
+	height: auto; /* allow content to define height */
+	min-height: 300px;
+	background: #f3fbfb;
+	border-radius: 15px;
+	padding: 1.5rem;
+	border: 1px solid #dbeaf0;
+	text-align: center;
+	flex-shrink: 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start; /* start from top so image is fully visible */
+	align-items: center;
+	transition: all 0.3s ease;
+}
+
+.home-rank-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 12px 28px rgba(9, 58, 91, 0.18);
+	border-color: #0a7c75;
+}
+
+/* Image */
+.home-rank-image {
+	display: block;
+	width: 100%;
+	height: 200px; /* show more of the face area */
+	object-fit: cover; /* crop to fit without distortion */
+	object-position: center top; /* prioritize face region near top */
+	border-radius: 10px;
+	margin-bottom: 12px;
+}
+
+/* Text */
+.home-rank-name {
+	margin: 8px 0 6px 0;
+	font-size: 20px; /* slightly larger */
+	font-weight: 800; /* bold */
+	color: #0f0f0f; /* black/dark */
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+	line-height: 1.3;
+}
+
+.home-rank-class {
+	margin: 4px 0 6px 0;
+	font-size: 14px;
+	font-weight: 500;
+	color: #666666; /* medium gray */
+	line-height: 1.2;
+}
+
+.home-rank-rank {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 600; /* normal-to-medium */
+	color: #555555; /* dark gray */
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+	.home-rank-title { font-size: 26px; }
+	.home-rank-cards { gap: 16px; }
+	.home-rank-card { width: 200px; min-height: 280px; height: auto; padding: 1.2rem; }
+	.home-rank-image { height: 180px; object-position: center top; }
+}
+
+@media (max-width: 480px) {
+	.home-rank-card {
+		width: 100%;
+		max-width: 320px;
+		margin: 0 auto;
+	}
+}
